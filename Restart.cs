@@ -13,6 +13,6 @@ public class Restart : MonoBehaviour
     // Update is called once per frame
     public void Playagain() // function for button
     {
-        SceneManager.LoadScene("Lv1");
+        SceneManager.LoadScene("Lv1"); // reload scene 1
     }
 }

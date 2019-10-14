@@ -6,10 +6,11 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour
 {
     public GameObject Player;
+    // every code which isn't commented is the same with the ghost script
 
     public float speed = 0f;
     public float health = 5f;
-    public float Dis;
+    public float Dis; // set up float distance
     public Animator animator;
     public AudioSource o2;
 
@@ -37,12 +38,12 @@ public class Skeleton : MonoBehaviour
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
         }
 
-        if (Vector2.Distance(transform.position, Player.transform.position) > Dis)
+        if (Vector2.Distance(transform.position, Player.transform.position) > Dis) // this code is not working at all
         { 
             speed = 0f;
             animator.SetFloat("Speed", speed);
         }
-        if (Vector2.Distance(transform.position, Player.transform.position) < Dis)
+        if (Vector2.Distance(transform.position, Player.transform.position) < Dis) // get close to the player if he crosses the safe distance
         {
             speed = 4.5f;
             animator.SetFloat("Speed", speed);

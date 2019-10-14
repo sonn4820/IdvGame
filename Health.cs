@@ -5,29 +5,29 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public static float HP = 30f;
-    public Text HPbar;
-    public GameObject panel;
-    public AudioSource ouch;
+    public static float HP = 20f; // set HP
+    public Text HPbar; // place for text
+    public GameObject panel; //place for panel
+    public AudioSource ouch; // place of audio
     // Start is called before the first frame update
     void Start()
     {
-        panel.gameObject.SetActive(false);
-        ouch = GetComponent<AudioSource>();
+        panel.gameObject.SetActive(false); // hide panel
+        ouch = GetComponent<AudioSource>(); // get audio
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HP <= 0)
+        if (HP <= 0) // if hp <0
         {
-            Destroy(this.gameObject);
-            panel.gameObject.SetActive(true);
+            Destroy(this.gameObject); // die
+            panel.gameObject.SetActive(true); // show panel
         }
-        HPbar.text = "HP: " + HP;
+        HPbar.text = "HP: " + HP; // show hp on screen
     }
     
-    private void OnTriggerEnter2D(Collider2D uwu)
+    private void OnTriggerEnter2D(Collider2D uwu) // lose hp if collided with demons
     {
         if (uwu.gameObject.tag == "g")
         {

@@ -14,6 +14,6 @@ public class Map : MonoBehaviour
     // Update is called once per frame
     public void play() // function for button
     {
-        SceneManager.LoadScene("Map");
+        SceneManager.LoadScene("Map"); //load map scene
     }
 }

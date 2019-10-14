@@ -7,7 +7,6 @@ public class Arrow : MonoBehaviour
 {
     public float speed = 20f; // set up the speed
     public Rigidbody2D rb; // get the rigidboy of the arrow
-    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +14,7 @@ public class Arrow : MonoBehaviour
     }
     void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        Destroy(gameObject); // destroy when it goes off the screen
     }
     // Update is called once per frame
     public void OnTriggerEnter2D(Collider2D col)

@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public GameObject Player;
-    public float speed = 1f;
-    public float health = 1f;
-    public Animator animator;
-    public float delay = 0f;
-    public AudioSource o1;
+    public GameObject Player; // get the player
+    public float speed = 1f; // set up speed
+    public float health = 1f; // set up health
+    public Animator animator; // get animator
+    public float delay = 0f; // set delay after death
+    public AudioSource o1; // get audio source
     // Start is called before the first frame update
     void Start()
     {
-        o1.GetComponent<AudioSource>();
+        o1.GetComponent<AudioSource>(); // play the audio source
     }
     
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Ghost : MonoBehaviour
     {
        
 
-        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime); // moving toward the player
 
         if (Player.transform.position.x < transform.position.x)
         {
@@ -35,7 +35,7 @@ public class Ghost : MonoBehaviour
             //face right
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        if (health <= 0)
+        if (health <= 0) // if hp is below 0, destroy and play death animation
         {
             speed = 0f;
             animator.SetFloat("HP", health);
@@ -44,14 +44,14 @@ public class Ghost : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "player")
+        if (collision.gameObject.tag == "player") // destroy when collide the player
         {
             health -= 1;
             o1.Play();
             animator.SetFloat("HP", health);
             Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + delay);
         }
-        if (collision.gameObject.tag == "arrow")
+        if (collision.gameObject.tag == "arrow") // lose hp when get hit by arows
         {
             health -= 1;
             o1.Play();

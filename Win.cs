@@ -14,7 +14,7 @@ public class Win : MonoBehaviour
     {
         if (owo.gameObject.tag == "player") // collision with player
         {
-        SceneManager.LoadScene("Win"); // move scene
+        SceneManager.LoadScene("Win"); // load win scene
         }
     }
 }

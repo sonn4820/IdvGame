@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Howtoplay : MonoBehaviour
 {
-    public GameObject panel;
+    public GameObject panel; // place for panel
     // Start is called before the first frame update
     void Start()
     {
-        panel.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false); //hide panel
     }
 
     // Update is called once per frame
@@ -18,6 +18,6 @@ public class Howtoplay : MonoBehaviour
     }
     public void Click()
     {
-        panel.gameObject.SetActive(true);
+        panel.gameObject.SetActive(true); //show panel
     }
 }

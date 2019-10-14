@@ -14,6 +14,6 @@ public class Lv1 : MonoBehaviour
     // Update is called once per frame
     public void play() // function for button
     {
-        SceneManager.LoadScene("Lv1");
+        SceneManager.LoadScene("Lv1"); //load lv1 scene
     }
 }

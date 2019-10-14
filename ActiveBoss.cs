@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class ActiveBoss : MonoBehaviour
 {
-    public GameObject Boss;  // reference to portal
+    public GameObject Boss;  // reference to boss
     public GameObject lastminion; // referece to enemy object
    
     // Start is called before the first frame update
     void Start()
     {
-        Boss.gameObject.SetActive(false); // hide the portal
+        Boss.gameObject.SetActive(false); // hide the boss
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class ActiveBoss : MonoBehaviour
     {
         if (lastminion == null)
         {  // see if the enemy has been destroyed
-            Boss.gameObject.SetActive(true); // show the portal
+            Boss.gameObject.SetActive(true); // show the boss
         }
     }
 }

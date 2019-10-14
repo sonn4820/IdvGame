@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private float moveSpeed = 4f;
+    private float moveSpeed = 4f; // call speed
     public Transform target; // Drop the player in the inspector of the camera
-    public float cameraDistance = 75.0f;
+    public float cameraDistance = 75.0f; // distance of the camera 
 
     private void Awake()
     {
@@ -15,14 +15,14 @@ public class Camera : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        //Calculate and store the offset value by getting the distance between the player's position and camera's position.
+        
         
     }
    
     void FixedUpdate()
     {
-        Vector3 newPosition = new Vector3(target.position.x + 5f, transform.position.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, newPosition, moveSpeed * Time.deltaTime);
+        Vector3 newPosition = new Vector3(target.position.x + 5f, transform.position.y, transform.position.z); // call new vector 3 for camera
+        transform.position = Vector3.Lerp(transform.position, newPosition, moveSpeed * Time.deltaTime); // make camera follow player
     }
     
 
