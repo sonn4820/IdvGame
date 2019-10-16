@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public static float HP = 20f; // set HP
+    public float HP = 25f; // set HP
     public Text HPbar; // place for text
     public GameObject panel; //place for panel
     public AudioSource ouch; // place of audio
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,10 @@ public class Health : MonoBehaviour
         {
             Destroy(this.gameObject); // die
             panel.gameObject.SetActive(true); // show panel
+        }
+        else if( player != null)
+        {
+            panel.gameObject.SetActive(false); // hide panel
         }
         HPbar.text = "HP: " + HP; // show hp on screen
     }
@@ -49,5 +54,6 @@ public class Health : MonoBehaviour
             HP -= 30;
             ouch.Play();
         }
+        
     }
 }
